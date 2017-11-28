@@ -31,6 +31,11 @@ class TestRiver < Minitest::Test
     assert_equal(false, @river1.is_fish_swimming_here?(@janegarvey))
   end
 
+  def test_remove_fish
+    
+    assert_equal(@fish2,   @river1.remove_fish(@fish2))
+  end
+
 
 
 end

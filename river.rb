@@ -19,4 +19,9 @@ class River
   def is_fish_swimming_here?(fish)
     return @fishes.include?(fish)
   end
+
+  def remove_fish()
+    return @fishes.pop()
+  end
+
 end

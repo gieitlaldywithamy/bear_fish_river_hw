@@ -1,8 +1,8 @@
 require("minitest/autorun")
 require("minitest/rg")
-require_relative("../bear.rb")
-require_relative("../river.rb")
-require_relative("../fish.rb")
+require_relative("../bear")
+require_relative("../river")
+require_relative("../fish")
 
 class TestBear < Minitest::Test
   def setup
@@ -21,14 +21,12 @@ class TestBear < Minitest::Test
   end
 
   def test_bear_can_take_fish_from_river
-    @bear1.take_fish_from_river(@fish1, @river1)
-    assert_equal([@fish1, @bear1.stomach])
+    @bear1.take_fish_from_river(@river1)
+    assert_equal(1, @bear1.stomach.count)
+  end
+
+  def test_bear_can_eat
+    @bear1.eat_fish(@fish1)
+    assert_equal([@fish1],@bear1.stomach)
   end
 end
-
-
-# - A bear should have a name e.g. "Yogi"
-# - A bear should have an empty stomach ( maybe an array )
-#
-# - A bear should be able to take a fish from the river
-# - A river should lose a fish when a bear takes a fish

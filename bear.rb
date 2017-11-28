@@ -11,13 +11,15 @@ class Bear
      @stomach.push(fish)
   end
 
-  def take_fish_from_river(fish, river)
-    if river.is_fish_swimming_here?(fish)
-      river.remove_fish(fish)
-      eat_fish(fish)
-    end
+  def take_fish_from_river(river)
+
+      fish_to_eat = river.remove_fish()
+      eat_fish(fish_to_eat)
 
   end
+end
+
+
   # def take_fish_from_river(river, fish)
   #   if (river.is_fish_swimming_here?(fish))
   #     river.remove_fish(fish)
@@ -41,5 +43,3 @@ class Bear
   #   fish = river.get_fish()
   #   @stomach.push(fish)
   # end
-
-end
