@@ -22,4 +22,15 @@ class TestRiver < Minitest::Test
     assert_equal(5, @river1.fishes.length)
   end
 
+  def test_is_fish_swimming_here_aye
+    assert_equal(true, @river1.is_fish_swimming_here?(@fish1))
+  end
+
+  def test_is_fish_swimming_here_naw
+    @janegarvey = Fish.new("Jane Garvey")
+    assert_equal(false, @river1.is_fish_swimming_here?(@janegarvey))
+  end
+
+
+
 end

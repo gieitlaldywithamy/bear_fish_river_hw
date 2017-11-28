@@ -1,12 +1,15 @@
 require("minitest/autorun")
 require("minitest/rg")
 require_relative("../bear.rb")
-
+require_relative("../river.rb")
+require_relative("../fish.rb")
 
 class TestBear < Minitest::Test
   def setup
     @bear1 = Bear.new("Yogi")
     @bear2 = Bear.new("Father")
+    @fish1 = Fish.new("Little Miss Dot to Draw")
+    @river1 = River.new("Nile", [])
   end
 
   def test_bear_has_name
@@ -15,6 +18,10 @@ class TestBear < Minitest::Test
 
   def test_bear_starts_with_empty_stomach
     assert_equal([], @bear1.stomach)
+  end
+
+  def test_bear_can_take_fish_from_river
+    @bear1.take_fish_from_river(@fish1, @river1)
   end
 end
 
