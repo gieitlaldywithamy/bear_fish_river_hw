@@ -11,11 +11,20 @@ class Bear
      @stomach.push(fish)
   end
 
+
   def take_fish_from_river(river)
 
       fish_to_eat = river.remove_fish()
       eat_fish(fish_to_eat)
 
+  end
+
+  def roar
+    return "ROAR!"
+  end
+
+  def food_count
+    return @stomach.length
   end
 end
 
