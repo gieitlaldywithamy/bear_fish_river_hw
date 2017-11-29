@@ -21,6 +21,7 @@ class TestBear < Minitest::Test
   end
 
   def test_bear_can_take_fish_from_river
+    @river1.add_fish(@fish1)
     @bear1.take_fish_from_river(@river1)
     assert_equal(1, @bear1.stomach.count)
   end
