@@ -20,7 +20,7 @@ class River
     return @fishes.include?(fish)
   end
 
-  def remove_fish()
+  def yield_fish()
     return @fishes.pop()
   end
 
